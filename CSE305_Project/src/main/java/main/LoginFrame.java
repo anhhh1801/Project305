@@ -233,7 +233,7 @@ public class LoginFrame extends javax.swing.JFrame {
                         n = true;
                         this.lblLoginError.setText("");
                         JOptionPane.showMessageDialog(this, "Log In Successful");
-                        HomeFrame hf = new HomeFrame();
+                        MainPage hf = new MainPage(name);
                         hf.setLocationRelativeTo(null);
                         hf.setVisible(true);
                         this.dispose();
