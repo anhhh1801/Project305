@@ -46,8 +46,8 @@ public class UpdateFrame extends javax.swing.JFrame {
      */
     public UpdateFrame(java.awt.Frame parent, boolean modal, String name) {
         initComponents();
-        updateDB();
         this.name = name;
+        updateDB();
     }
     
     //function
@@ -56,7 +56,7 @@ public class UpdateFrame extends javax.swing.JFrame {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             sqlConn = DriverManager.getConnection(dataConn, username, password);
-            pst = sqlConn.prepareStatement("Select expense_id, date, type_name, amount, description from expenses");
+            pst = sqlConn.prepareStatement("Select expense_id, year, month, day, type_name, amount, description from expenses where username  = '" + name + "'");
             
             
             rs = pst.executeQuery();
@@ -72,7 +72,9 @@ public class UpdateFrame extends javax.swing.JFrame {
                 
                 for(i = 1; i<=q; i ++){
                     columnData.add(rs.getString("expense_id"));
-                    columnData.add(rs.getString("date"));
+                    columnData.add(rs.getString("year"));
+                    columnData.add(rs.getString("month"));
+                    columnData.add(rs.getString("day"));
                     columnData.add(rs.getString("type_name"));
                     columnData.add(rs.getString("amount"));
                     columnData.add(rs.getString("description"));
@@ -136,7 +138,7 @@ public class UpdateFrame extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        txtDate = new javax.swing.JTextField();
+        txtYear = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         btnUpdate = new javax.swing.JButton();
         cboType = new javax.swing.JComboBox<>();
@@ -154,6 +156,8 @@ public class UpdateFrame extends javax.swing.JFrame {
         lblNoRow = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         txtID = new javax.swing.JTextField();
+        txtMonth = new javax.swing.JTextField();
+        txtDay = new javax.swing.JTextField();
         spShow = new javax.swing.JScrollPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblShow = new javax.swing.JTable();
@@ -382,6 +386,8 @@ public class UpdateFrame extends javax.swing.JFrame {
 
         jLabel6.setText("Date");
 
+        txtYear.setText("YYYY");
+
         jLabel7.setText("Type");
 
         btnUpdate.setBackground(new java.awt.Color(102, 0, 102));
@@ -426,6 +432,15 @@ public class UpdateFrame extends javax.swing.JFrame {
         txtID.setEditable(false);
         txtID.setBackground(new java.awt.Color(153, 153, 153));
 
+        txtMonth.setText("MM");
+
+        txtDay.setText("DD");
+        txtDay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDayActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -439,20 +454,34 @@ public class UpdateFrame extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(30, 30, 30)
-                                        .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(118, 118, 118)
-                                .addComponent(lblRamError, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(lblPublisherError, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(229, 229, 229)
+                                .addComponent(lblPriceError, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(75, 75, 75))
+                            .addComponent(lblNoRow, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel9)
+                                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(30, 30, 30)))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(txtDay, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(txtYear, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(108, 108, 108)
+                                        .addComponent(lblRamError, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(txtAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -470,31 +499,25 @@ public class UpdateFrame extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cboType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(lblPublisherError, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(229, 229, 229)
-                                .addComponent(lblPriceError, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(75, 75, 75))
-                            .addComponent(lblNoRow, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(cboType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(13, 13, 13)
-                .addComponent(jLabel2)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addComponent(jLabel2)
                         .addGap(40, 40, 40)
                         .addComponent(lblRamError, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
+                        .addGap(65, 65, 65)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txtMonth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtDay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
@@ -535,11 +558,11 @@ public class UpdateFrame extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Date", "Type", "Amount", "Description"
+                "ID", "Year", "Month", "Day", "Type", "Amount", "Description"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -681,14 +704,16 @@ public class UpdateFrame extends javax.swing.JFrame {
 
         try{
             id = Integer.parseInt(txtID.getText());
-            String date = txtDate.getText();
+            int year = Integer.parseInt(txtYear.getText());
+            int month = Integer.parseInt(txtMonth.getText());
+            int day = Integer.parseInt(txtDay.getText());
             String type = (String)cboType.getSelectedItem();
             double amount = Double.parseDouble(txtAmount.getText());
             String description = txtDescription.getText();
             
             Class.forName("com.mysql.jdbc.Driver");
             sqlConn = DriverManager.getConnection(dataConn, username, password);
-            pst = sqlConn.prepareStatement("update expenses set Date = '" + date +  "', type_name ='" + type +"', amount ='" + amount +"', description ='" + description +"' where expense_id =" + id);
+            pst = sqlConn.prepareStatement("update expenses set year = '" + year +  "', month ='" + month +"', day ='" + day +"', type_name ='" + type +"', amount ='" + amount +"', description ='" + description +"' where expense_id =" + id);
             
             pst.executeUpdate();
             JOptionPane.showMessageDialog(this, "Updated");
@@ -704,6 +729,10 @@ public class UpdateFrame extends javax.swing.JFrame {
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
+        AddFrame af = new AddFrame(name);
+        af.setLocationRelativeTo(null);
+        af.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void tblShowMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblShowMouseClicked
@@ -712,10 +741,12 @@ public class UpdateFrame extends javax.swing.JFrame {
         int selectedRow = tblShow.getSelectedRow();  
         
         txtID.setText(RecordTable.getValueAt(selectedRow, 0).toString());
-        txtDate.setText(RecordTable.getValueAt(selectedRow, 1).toString());      
-        cboType.setSelectedItem(RecordTable.getValueAt(selectedRow, 2));
-        txtAmount.setText(RecordTable.getValueAt(selectedRow, 3).toString());
-        txtDescription.setText(RecordTable.getValueAt(selectedRow, 4).toString());
+        txtYear.setText(RecordTable.getValueAt(selectedRow, 1).toString());
+        txtMonth.setText(RecordTable.getValueAt(selectedRow, 2).toString());
+        txtDay.setText(RecordTable.getValueAt(selectedRow, 3).toString()); 
+        cboType.setSelectedItem(RecordTable.getValueAt(selectedRow, 4));
+        txtAmount.setText(RecordTable.getValueAt(selectedRow, 5).toString());
+        txtDescription.setText(RecordTable.getValueAt(selectedRow, 6).toString());
             
     }//GEN-LAST:event_tblShowMouseClicked
 
@@ -737,6 +768,10 @@ public class UpdateFrame extends javax.swing.JFrame {
     private void cboTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboTypeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cboTypeActionPerformed
+
+    private void txtDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDayActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDayActionPerformed
 
     /**
      * @param args the command line arguments
@@ -823,10 +858,12 @@ public class UpdateFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane spShow;
     private javax.swing.JTable tblShow;
     private javax.swing.JTextField txtAmount;
-    private javax.swing.JTextField txtDate;
+    private javax.swing.JTextField txtDay;
     private javax.swing.JTextField txtDescription;
     private javax.swing.JTextField txtID;
+    private javax.swing.JTextField txtMonth;
     private javax.swing.JTextField txtSearch;
+    private javax.swing.JTextField txtYear;
     // End of variables declaration//GEN-END:variables
 
     public void showData() {
@@ -849,7 +886,7 @@ public class UpdateFrame extends javax.swing.JFrame {
     }
 
     public void clearUpdate() {
-        this.txtDate.setText("");
+        this.txtYear.setText("");
         this.txtAmount.setText("");
         this.txtDescription.setText("");
         this.txtID.setText("");

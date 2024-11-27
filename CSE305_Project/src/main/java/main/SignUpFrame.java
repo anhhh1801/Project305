@@ -415,11 +415,10 @@ public class SignUpFrame extends javax.swing.JFrame {
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
-        }
-        
-        try {
+            
+            try {
             String username1 = txtSignUpUser.getText();
-            String password1 = txtSignUpPassword.getText();
+            password1 = txtSignUpPassword.getText();
             String fullname = txtFullname.getText();
             String job = txtJob.getText();
             String dob = txtDOBYear.getText() + "-" + txtDOBMonth.getText() + "-" + txtDOBDay.getText();
@@ -446,6 +445,9 @@ public class SignUpFrame extends javax.swing.JFrame {
         } catch (SQLException ex) {
             System.err.println(ex);
         }
+        }
+        
+        
     }//GEN-LAST:event_btnSignUpActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed

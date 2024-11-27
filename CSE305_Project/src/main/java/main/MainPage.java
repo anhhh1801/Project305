@@ -36,9 +36,11 @@ public class MainPage extends javax.swing.JFrame {
         btnLogout = new javax.swing.JButton();
         btnDetail = new javax.swing.JButton();
         jLabelWel = new javax.swing.JLabel();
+        btnAccountDetail = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("HomePage");
+        setMinimumSize(new java.awt.Dimension(500, 250));
         setResizable(false);
         setSize(new java.awt.Dimension(500, 500));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -49,7 +51,7 @@ public class MainPage extends javax.swing.JFrame {
                 btnManageActionPerformed(evt);
             }
         });
-        getContentPane().add(btnManage, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, -1, -1));
+        getContentPane().add(btnManage, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel2.setText("EXPENSE TRACKER");
@@ -61,7 +63,7 @@ public class MainPage extends javax.swing.JFrame {
                 btnLogoutActionPerformed(evt);
             }
         });
-        getContentPane().add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 270, -1, -1));
+        getContentPane().add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, -1, -1));
 
         btnDetail.setText("Expense Details");
         btnDetail.addActionListener(new java.awt.event.ActionListener() {
@@ -69,10 +71,18 @@ public class MainPage extends javax.swing.JFrame {
                 btnDetailActionPerformed(evt);
             }
         });
-        getContentPane().add(btnDetail, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, -1, -1));
+        getContentPane().add(btnDetail, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 120, -1, -1));
 
         jLabelWel.setText("Welcome");
         getContentPane().add(jLabelWel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 190, 30));
+
+        btnAccountDetail.setText("Account Details");
+        btnAccountDetail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAccountDetailActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAccountDetail, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -97,6 +107,14 @@ public class MainPage extends javax.swing.JFrame {
         this.dispose();
         
     }//GEN-LAST:event_btnDetailActionPerformed
+
+    private void btnAccountDetailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccountDetailActionPerformed
+        // TODO add your handling code here:
+        UpdateUserDetails uud = new UpdateUserDetails(name);
+        uud.setLocationRelativeTo(null);
+        uud.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnAccountDetailActionPerformed
 
     /**
      * @param args the command line arguments
@@ -135,6 +153,7 @@ public class MainPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAccountDetail;
     private javax.swing.JButton btnDetail;
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnManage;
