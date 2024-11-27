@@ -1,0 +1,23 @@
+Usecase
+
+User:
+Đăng nhập/đăng ký + câu hỏi bảo mật/quên mật khẩu
+
+Quản lý thông tin người dùng -> Chỉnh sửa thông tin cá nhân
+
+Quản lý chi tiêu -> Tổng số tiền chi tiêu từng mục, tổng tiền tất cả các mục, cảnh báo lố chi tiêu, xuất thông tin chi tiêu
+
+Thông tin chi tiêu -> Thêm/xoá/sửa/xuất loại chi tiêu
+
+
+Admin:
+Quản lý tài khoản người dùng
+Phân loại tài khoản (Free/Premium)
+Quản lý mục tiêu dung 
+Xuất danh sách người dùng
+ 
+
+
+
+Trello:
+xạo chó đi
