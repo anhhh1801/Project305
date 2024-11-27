@@ -423,10 +423,13 @@ public class SignUpFrame extends javax.swing.JFrame {
             String job = txtJob.getText();
             String dob = txtDOBYear.getText() + "-" + txtDOBMonth.getText() + "-" + txtDOBDay.getText();
             String income = txtIncome.getText();
+            int phone = 0;
+            String mail = "";
+            String membership = "";
 
             Class.forName("com.mysql.jdbc.Driver");
             sqlConn = DriverManager.getConnection(dataConn, username, password);
-            pst = sqlConn.prepareStatement("insert into user values ('" + username1 + "','" + fullname + "','" + dob + "','" + job + "','" + income + "')");
+            pst = sqlConn.prepareStatement("insert into user values ('" + username1 + "','" + fullname + "','" + dob + "','" + job + "','" + income + "','" + phone + "','" + mail + "','" + membership + "')");
 
             pst.executeUpdate();
 

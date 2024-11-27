@@ -86,27 +86,6 @@ public class UpdateFrame extends javax.swing.JFrame {
         }
     }
 
-//    private Vector<String> getTableColumnIdentifiers(JTable table) {
-//        JTableHeader header = table.getTableHeader();
-//        TableColumnModel columnModel = header.getColumnModel();
-//        Vector<String> columnIdentifiers = new Vector<>();
-//        for (int columnIndex = 0; columnIndex < columnModel.getColumnCount(); columnIndex++) {
-//            TableColumn column = columnModel.getColumn(columnIndex);
-//            columnIdentifiers.add(column.getHeaderValue().toString());
-//        }
-//        return columnIdentifiers;
-//    }
-//
-//    private void makeTableUneditable(JTable table) {
-//        DefaultTableModel model = (DefaultTableModel) table.getModel();
-//        table.setModel(new DefaultTableModel(model.getDataVector(), getTableColumnIdentifiers(table)) {
-//            @Override
-//            public boolean isCellEditable(int row, int column) {
-//                return false;
-//            }
-//        });
-//    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

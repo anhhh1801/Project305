@@ -216,7 +216,7 @@ public class LoginFrame extends javax.swing.JFrame {
             String name = txtName.getText();
             String pass = new String(txtPass.getPassword());
             if(name.equals("admin")&pass.equals("123")){
-                AdminFrame ad = new AdminFrame();
+                AdminPage ad = new AdminPage();
                 ad.setLocationRelativeTo(null);
                 ad.setVisible(true);
                 this.dispose();
