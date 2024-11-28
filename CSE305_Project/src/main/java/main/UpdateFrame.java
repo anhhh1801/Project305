@@ -104,7 +104,6 @@ public class UpdateFrame extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         txtSearch = new javax.swing.JTextField();
         btnRemove = new javax.swing.JButton();
-        btnRestore = new javax.swing.JButton();
         btnRestore1 = new javax.swing.JButton();
         lblBuyError = new javax.swing.JLabel();
         btnExit = new javax.swing.JButton();
@@ -199,17 +198,6 @@ public class UpdateFrame extends javax.swing.JFrame {
             }
         });
 
-        btnRestore.setBackground(new java.awt.Color(102, 0, 102));
-        btnRestore.setFont(new java.awt.Font("MS Gothic", 1, 18)); // NOI18N
-        btnRestore.setForeground(new java.awt.Color(255, 255, 255));
-        btnRestore.setText("Restore");
-        btnRestore.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
-        btnRestore.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRestoreActionPerformed(evt);
-            }
-        });
-
         btnRestore1.setBackground(new java.awt.Color(102, 0, 102));
         btnRestore1.setFont(new java.awt.Font("MS Gothic", 1, 18)); // NOI18N
         btnRestore1.setForeground(new java.awt.Color(255, 255, 255));
@@ -264,8 +252,6 @@ public class UpdateFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnRestore, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
                         .addComponent(btnRestore1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(txtSearch))
                 .addContainerGap())
@@ -286,7 +272,6 @@ public class UpdateFrame extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnRestore1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnRestore, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(lblBuyError, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -655,16 +640,9 @@ public class UpdateFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSearchActionPerformed
 
-    private void btnRestoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRestoreActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_btnRestoreActionPerformed
-
     private void btnRestore1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRestore1ActionPerformed
         // TODO add your handling code here:
-        clearUpdate();
-        updateTableData();
-        JOptionPane.showMessageDialog(this, "Done");
+       
     }//GEN-LAST:event_btnRestore1ActionPerformed
     private JFrame frame;
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
@@ -802,7 +780,6 @@ public class UpdateFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnPrint;
     private javax.swing.JButton btnRemove;
-    private javax.swing.JButton btnRestore;
     private javax.swing.JButton btnRestore1;
     private javax.swing.JButton btnUpdate;
     private javax.swing.ButtonGroup buttonGroup1;
@@ -845,42 +822,18 @@ public class UpdateFrame extends javax.swing.JFrame {
     private javax.swing.JTextField txtYear;
     // End of variables declaration//GEN-END:variables
 
-    public void showData() {
-        tblModel.setRowCount(0);
-        
-    }
-
-    private void loadDataFromFile() {
-
-        showData();
-    }
-
-    public boolean isNumber(String str) {
-        try {
-            float p = Float.parseFloat(str);
-            return true;
-        } catch (NumberFormatException e) {
-            return false;
-        }
-    }
+    
 
     public void clearUpdate() {
         this.txtYear.setText("");
+        this.txtMonth.setText("");
+        this.txtDay.setText("");
         this.txtAmount.setText("");
         this.txtDescription.setText("");
         this.txtID.setText("");
         this.cboType.setSelectedItem("None");
     }
 
-    public void updateTableData() {
-//        DefaultTableModel model = (DefaultTableModel) tblShow.getModel();
-//        model.setRowCount(0);
-//
-//        for (Phone phone : listPhone) {
-//            Object[] rowData = {phone.getId(), phone.getName(), phone.getType(), phone.getPublisher(), phone.getRAM(), phone.getColor(), phone.getPrice()};
-//            model.addRow(rowData);
-//        }
-
-    }
+    
 
 }

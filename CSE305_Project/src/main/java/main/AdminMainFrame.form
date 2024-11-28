@@ -111,11 +111,8 @@
                   <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="spShow" pref="0" max="32767" attributes="0"/>
-                      <Group type="102" attributes="0">
-                          <Component id="jPanel2" min="-2" pref="355" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="7" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="spShow" pref="362" max="32767" attributes="0"/>
+                      <Component id="jPanel2" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
@@ -151,13 +148,11 @@
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="btnRemove" min="-2" pref="115" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="btnRestore" min="-2" pref="115" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="btnRestore1" min="-2" pref="115" max="-2" attributes="0"/>
                           </Group>
                           <Component id="txtSearch" min="-2" pref="739" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="10" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -175,7 +170,6 @@
                           <Group type="103" alignment="1" groupAlignment="3" attributes="0">
                               <Component id="btnPrint" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
                               <Component id="btnRemove" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
-                              <Component id="btnRestore" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
                               <Component id="btnRestore1" alignment="3" min="-2" pref="43" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -229,30 +223,6 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRemoveActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="btnRestore">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="0" red="66" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="MS Gothic" size="18" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Restore"/>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder thickness="3">
-                      <Color PropertyName="color" blue="ff" green="ff" red="ff" type="rgb"/>
-                    </LineBorder>
-                  </Border>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRestoreActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnRestore1">
@@ -468,7 +438,7 @@
                                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                               <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="txtAmount" min="-2" pref="109" max="-2" attributes="0"/>
+                                              <Component id="txtJob" min="-2" pref="109" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="txtIncome" alignment="0" min="-2" pref="182" max="-2" attributes="0"/>
                                       </Group>
@@ -476,16 +446,16 @@
                                   <Group type="102" attributes="0">
                                       <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="txtIncome1" min="-2" pref="78" max="-2" attributes="0"/>
+                                      <Component id="txtPhone" min="-2" pref="78" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="txtIncome2" min="-2" pref="109" max="-2" attributes="0"/>
+                                      <Component id="txtMail" min="-2" pref="109" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel7" min="-2" pref="75" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="cboType" min="-2" pref="126" max="-2" attributes="0"/>
+                                      <Component id="cboAccountType" min="-2" pref="126" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace pref="152" max="32767" attributes="0"/>
@@ -572,7 +542,7 @@
                                           <Component id="txtDOB" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="txtAmount" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtJob" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="32767" attributes="0"/>
                                   </Group>
@@ -585,9 +555,9 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="3" attributes="0">
-                                          <Component id="txtIncome2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtMail" alignment="3" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
-                                          <Component id="txtIncome1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="txtPhone" alignment="3" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                   </Group>
@@ -606,7 +576,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="cboType" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cboAccountType" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -656,7 +626,7 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel7">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Membership"/>
+                <Property name="text" type="java.lang.String" value="Account Type"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="btnUpdate">
@@ -676,20 +646,18 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnUpdateActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JComboBox" name="cboType">
+            <Component class="javax.swing.JComboBox" name="cboAccountType">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="5">
-                    <StringItem index="0" value="None"/>
-                    <StringItem index="1" value="Bronze"/>
-                    <StringItem index="2" value="Silver"/>
-                    <StringItem index="3" value="Gold"/>
-                    <StringItem index="4" value=" "/>
+                  <StringArray count="3">
+                    <StringItem index="0" value="Free"/>
+                    <StringItem index="1" value="No Ad"/>
+                    <StringItem index="2" value=" "/>
                   </StringArray>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboTypeActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboAccountTypeActionPerformed"/>
               </Events>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -705,7 +673,7 @@
                 <Property name="text" type="java.lang.String" value="Fullname"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtAmount">
+            <Component class="javax.swing.JTextField" name="txtJob">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel11">
               <Properties>
@@ -780,6 +748,12 @@
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtUsername">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="99" green="99" red="99" type="rgb"/>
+                </Property>
+              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtUsernameActionPerformed"/>
               </Events>
@@ -801,9 +775,9 @@
                 <Property name="text" type="java.lang.String" value="Phone"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtIncome1">
+            <Component class="javax.swing.JTextField" name="txtPhone">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtIncome1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPhoneActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel15">
@@ -811,9 +785,9 @@
                 <Property name="text" type="java.lang.String" value="Mail"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="txtIncome2">
+            <Component class="javax.swing.JTextField" name="txtMail">
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtIncome2ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtMailActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -836,7 +810,7 @@
                         <Column editable="false" title="ID" type="java.lang.Object"/>
                         <Column editable="false" title="Username" type="java.lang.Object"/>
                         <Column editable="false" title="Fullname" type="java.lang.Object"/>
-                        <Column editable="false" title="Membership" type="java.lang.Object"/>
+                        <Column editable="false" title="Account Type" type="java.lang.Object"/>
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">

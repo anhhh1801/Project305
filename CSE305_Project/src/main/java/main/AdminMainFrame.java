@@ -17,6 +17,7 @@ import javax.swing.table.TableColumnModel;
 import javax.swing.table.TableRowSorter;
 import java.sql.*;
 import java.text.*;
+import static main.UpdateUserDetails.name;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -54,7 +55,7 @@ public class AdminMainFrame extends javax.swing.JFrame {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             sqlConn = DriverManager.getConnection(dataConn, username, password);
-            pst = sqlConn.prepareStatement("Select username from user");
+            pst = sqlConn.prepareStatement("Select user_id, username, fullname, account_type from user");
             
             
             rs = pst.executeQuery();
@@ -69,13 +70,10 @@ public class AdminMainFrame extends javax.swing.JFrame {
                 Vector columnData = new Vector();
                 
                 for(i = 1; i<=q; i ++){
-                    columnData.add(rs.getString("expense_id"));
-                    columnData.add(rs.getString("year"));
-                    columnData.add(rs.getString("month"));
-                    columnData.add(rs.getString("day"));
-                    columnData.add(rs.getString("type_name"));
-                    columnData.add(rs.getString("amount"));
-                    columnData.add(rs.getString("description"));
+                    columnData.add(rs.getString("user_id"));
+                    columnData.add(rs.getString("username"));
+                    columnData.add(rs.getString("fullname"));
+                    columnData.add(rs.getString("account_type"));
                 }
                 RecordTable.addRow(columnData);
             }
@@ -102,7 +100,6 @@ public class AdminMainFrame extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         txtSearch = new javax.swing.JTextField();
         btnRemove = new javax.swing.JButton();
-        btnRestore = new javax.swing.JButton();
         btnRestore1 = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
         btnPrint = new javax.swing.JButton();
@@ -116,10 +113,10 @@ public class AdminMainFrame extends javax.swing.JFrame {
         txtDOB = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         btnUpdate = new javax.swing.JButton();
-        cboType = new javax.swing.JComboBox<>();
+        cboAccountType = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        txtAmount = new javax.swing.JTextField();
+        txtJob = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         lblRamError = new javax.swing.JLabel();
         lblNameError = new javax.swing.JLabel();
@@ -136,9 +133,9 @@ public class AdminMainFrame extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         txtIncome = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        txtIncome1 = new javax.swing.JTextField();
+        txtPhone = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
-        txtIncome2 = new javax.swing.JTextField();
+        txtMail = new javax.swing.JTextField();
         spShow = new javax.swing.JScrollPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblShow = new javax.swing.JTable();
@@ -201,17 +198,6 @@ public class AdminMainFrame extends javax.swing.JFrame {
             }
         });
 
-        btnRestore.setBackground(new java.awt.Color(102, 0, 102));
-        btnRestore.setFont(new java.awt.Font("MS Gothic", 1, 18)); // NOI18N
-        btnRestore.setForeground(new java.awt.Color(255, 255, 255));
-        btnRestore.setText("Restore");
-        btnRestore.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
-        btnRestore.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRestoreActionPerformed(evt);
-            }
-        });
-
         btnRestore1.setBackground(new java.awt.Color(102, 0, 102));
         btnRestore1.setFont(new java.awt.Font("MS Gothic", 1, 18)); // NOI18N
         btnRestore1.setForeground(new java.awt.Color(255, 255, 255));
@@ -261,11 +247,9 @@ public class AdminMainFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btnRestore, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
                         .addComponent(btnRestore1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 739, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -280,7 +264,6 @@ public class AdminMainFrame extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnPrint, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnRestore, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnRestore1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -352,7 +335,7 @@ public class AdminMainFrame extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setText("Membership");
+        jLabel7.setText("Account Type");
 
         btnUpdate.setBackground(new java.awt.Color(102, 0, 102));
         btnUpdate.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -364,10 +347,10 @@ public class AdminMainFrame extends javax.swing.JFrame {
             }
         });
 
-        cboType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Bronze", "Silver", "Gold", " " }));
-        cboType.addActionListener(new java.awt.event.ActionListener() {
+        cboAccountType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Free", "No Ad", " " }));
+        cboAccountType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cboTypeActionPerformed(evt);
+                cboAccountTypeActionPerformed(evt);
             }
         });
 
@@ -402,6 +385,8 @@ public class AdminMainFrame extends javax.swing.JFrame {
             }
         });
 
+        txtUsername.setEditable(false);
+        txtUsername.setBackground(new java.awt.Color(153, 153, 153));
         txtUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtUsernameActionPerformed(evt);
@@ -414,17 +399,17 @@ public class AdminMainFrame extends javax.swing.JFrame {
 
         jLabel14.setText("Phone");
 
-        txtIncome1.addActionListener(new java.awt.event.ActionListener() {
+        txtPhone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIncome1ActionPerformed(evt);
+                txtPhoneActionPerformed(evt);
             }
         });
 
         jLabel15.setText("Mail");
 
-        txtIncome2.addActionListener(new java.awt.event.ActionListener() {
+        txtMail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIncome2ActionPerformed(evt);
+                txtMailActionPerformed(evt);
             }
         });
 
@@ -459,20 +444,20 @@ public class AdminMainFrame extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jLabel12)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(txtJob, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(txtIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel14)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtIncome1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel15)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtIncome2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtMail, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(cboType, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(cboAccountType, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -539,7 +524,7 @@ public class AdminMainFrame extends javax.swing.JFrame {
                                     .addComponent(txtDOB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel9)
                                     .addComponent(jLabel12)
-                                    .addComponent(txtAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtJob, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, Short.MAX_VALUE)))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel13)
@@ -548,9 +533,9 @@ public class AdminMainFrame extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(txtIncome2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel15)
-                                    .addComponent(txtIncome1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(10, 10, 10))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel14)
@@ -562,7 +547,7 @@ public class AdminMainFrame extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(8, 8, 8)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cboType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cboAccountType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel7))))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -586,7 +571,7 @@ public class AdminMainFrame extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Username", "Fullname", "Membership"
+                "ID", "Username", "Fullname", "Account Type"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -629,10 +614,8 @@ public class AdminMainFrame extends javax.swing.JFrame {
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(spShow, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 7, Short.MAX_VALUE)))
+                    .addComponent(spShow, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -707,16 +690,9 @@ public class AdminMainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSearchActionPerformed
 
-    private void btnRestoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRestoreActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_btnRestoreActionPerformed
-
     private void btnRestore1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRestore1ActionPerformed
         // TODO add your handling code here:
         clearUpdate();
-        updateTableData();
-        JOptionPane.showMessageDialog(this, "Done");
     }//GEN-LAST:event_btnRestore1ActionPerformed
     private JFrame frame;
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
@@ -730,8 +706,33 @@ public class AdminMainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_btnExitActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
-        DefaultTableModel Recordtable = (DefaultTableModel)tblShow.getModel();
-        int selectedRows = tblShow.getSelectedRow();
+        try{
+            id = Integer.parseInt(txtID.getText());
+            String fullname = txtFullname.getText();
+            String DOB = txtDOB.getText();
+            String job = txtJob.getText();
+            double income = Double.parseDouble(txtIncome.getText());
+            String phone = txtPhone.getText();
+            String mail = txtMail.getText();
+            String type = cboAccountType.getSelectedItem().toString();
+            System.out.println(type);
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            sqlConn = DriverManager.getConnection(dataConn, username, password);
+            pst = sqlConn.prepareStatement("update user set fullname = '" + fullname +  "', date_of_birth ='" + DOB +"', job ='" + job +"', monthlyIncome ='" + income +"', phone ='" + phone +"', mail ='" + mail +"', account_type ='" + type +"' where user_id = " + id);
+            
+            pst.executeUpdate();
+            updateDB();
+            JOptionPane.showMessageDialog(this, "Updated");
+            
+        }
+        catch (ClassNotFoundException ex){
+            java.util.logging.Logger.getLogger(AdminMainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }catch (SQLException ex){
+            System.err.println(ex);
+        }
+        
+        
 
         
     }//GEN-LAST:event_btnUpdateActionPerformed
@@ -749,12 +750,38 @@ public class AdminMainFrame extends javax.swing.JFrame {
         DefaultTableModel RecordTable = (DefaultTableModel)tblShow.getModel();
         int selectedRow = tblShow.getSelectedRow();  
         
-        txtID.setText(RecordTable.getValueAt(selectedRow, 0).toString());
-        txtDOB.setText(RecordTable.getValueAt(selectedRow, 1).toString());
-        txtFullname.setText(RecordTable.getValueAt(selectedRow, 2).toString());
-        txtUsername.setText(RecordTable.getValueAt(selectedRow, 3).toString()); 
-        cboType.setSelectedItem(RecordTable.getValueAt(selectedRow, 4));
-        txtAmount.setText(RecordTable.getValueAt(selectedRow, 5).toString());
+        try{
+            id = Integer.parseInt(RecordTable.getValueAt(selectedRow, 0).toString());
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            sqlConn = DriverManager.getConnection(dataConn, username, password);
+            pst = sqlConn.prepareStatement("Select username, fullname, Date_of_birth, job, monthlyIncome, phone, mail, account_type from user where user_id  = " + id);
+            
+            rs = pst.executeQuery();
+            ResultSetMetaData stData = rs.getMetaData();
+            
+            q = stData.getColumnCount();
+            
+            
+            while (rs.next()){
+                for(i = 1; i<=q; i ++){
+                    txtID.setText(String.valueOf(id));
+                    txtUsername.setText(rs.getString("username"));
+                    txtFullname.setText(rs.getString("fullname"));
+                    txtDOB.setText(rs.getString("date_of_birth"));
+                    txtJob.setText(rs.getString("job"));
+                    txtIncome.setText(String.valueOf(Double.parseDouble(rs.getString("monthlyIncome"))));
+                    txtPhone.setText(rs.getString("phone"));
+                    txtMail.setText(rs.getString("mail"));
+                    cboAccountType.setSelectedItem(rs.getString("account_type"));
+                }
+            }
+        }
+        catch (ClassNotFoundException ex){
+            java.util.logging.Logger.getLogger(AdminMainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }catch (SQLException ex){
+            System.err.println(ex);
+        }
             
     }//GEN-LAST:event_tblShowMouseClicked
 
@@ -773,9 +800,9 @@ public class AdminMainFrame extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnPrintActionPerformed
 
-    private void cboTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboTypeActionPerformed
+    private void cboAccountTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboAccountTypeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cboTypeActionPerformed
+    }//GEN-LAST:event_cboAccountTypeActionPerformed
 
     private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
         // TODO add your handling code here:
@@ -789,13 +816,13 @@ public class AdminMainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDOBActionPerformed
 
-    private void txtIncome1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIncome1ActionPerformed
+    private void txtPhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPhoneActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtIncome1ActionPerformed
+    }//GEN-LAST:event_txtPhoneActionPerformed
 
-    private void txtIncome2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIncome2ActionPerformed
+    private void txtMailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtIncome2ActionPerformed
+    }//GEN-LAST:event_txtMailActionPerformed
 
     /**
      * @param args the command line arguments
@@ -851,12 +878,11 @@ public class AdminMainFrame extends javax.swing.JFrame {
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnPrint;
     private javax.swing.JButton btnRemove;
-    private javax.swing.JButton btnRestore;
     private javax.swing.JButton btnRestore1;
     private javax.swing.JButton btnUpdate;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.JComboBox<String> cboType;
+    private javax.swing.JComboBox<String> cboAccountType;
     private javax.swing.JButton jButton4;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JFrame jFrame1;
@@ -887,52 +913,31 @@ public class AdminMainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel lblTypeError;
     private javax.swing.JScrollPane spShow;
     private javax.swing.JTable tblShow;
-    private javax.swing.JTextField txtAmount;
     private javax.swing.JTextField txtDOB;
     private javax.swing.JTextField txtFullname;
     private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtIncome;
-    private javax.swing.JTextField txtIncome1;
-    private javax.swing.JTextField txtIncome2;
+    private javax.swing.JTextField txtJob;
+    private javax.swing.JTextField txtMail;
+    private javax.swing.JTextField txtPhone;
     private javax.swing.JTextField txtSearch;
     private javax.swing.JTextField txtUsername;
     // End of variables declaration//GEN-END:variables
 
-    public void showData() {
-        tblModel.setRowCount(0);
-        
-    }
-
-    private void loadDataFromFile() {
-
-        showData();
-    }
-
-    public boolean isNumber(String str) {
-        try {
-            float p = Float.parseFloat(str);
-            return true;
-        } catch (NumberFormatException e) {
-            return false;
-        }
-    }
+    
 
     public void clearUpdate() {
         this.txtDOB.setText("");
-        this.txtAmount.setText("");
+        this.txtJob.setText("");
         this.txtID.setText("");
-        this.cboType.setSelectedItem("None");
+        this.cboAccountType.setSelectedItem("Free");
+        txtFullname.setText("");
+        txtIncome.setText("");
+        txtPhone.setText("");
+        txtMail.setText("");
+        txtUsername.setText("");
     }
 
-    public void updateTableData() {
-//        DefaultTableModel model = (DefaultTableModel) tblShow.getModel();
-//        model.setRowCount(0);
-//
-//        for (Phone phone : listPhone) {
-//            Object[] rowData = {phone.getId(), phone.getName(), phone.getType(), phone.getPublisher(), phone.getRAM(), phone.getColor(), phone.getPrice()};
-//            model.addRow(rowData);
-//        }
-
-    }
+  
 
 }
