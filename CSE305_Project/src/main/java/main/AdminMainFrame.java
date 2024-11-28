@@ -347,7 +347,7 @@ public class AdminMainFrame extends javax.swing.JFrame {
             }
         });
 
-        cboAccountType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Free", "No Ad", " " }));
+        cboAccountType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Free", "Premium", " " }));
         cboAccountType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cboAccountTypeActionPerformed(evt);
