@@ -19,7 +19,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
-import static main.AddFrame.name;
+import static main.AddExpenseFrame.name;
 
 /**
  *

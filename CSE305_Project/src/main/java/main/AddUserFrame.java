@@ -29,41 +29,25 @@ import javax.swing.JOptionPane;
  *
  * @author Viet Anh
  */
-public class SignUpFrame extends javax.swing.JFrame {
+public class AddUserFrame extends javax.swing.JFrame {
 
     private static final String username = "root";
     private static final String password = "anh18012003";
     private static final String dataConn = "jdbc:mysql://localhost:3306/project_cse305";
-    private ArrayList<User> list = new ArrayList<>();
-    IOFile iofile = new IOFile();
-    String masterString = "";
 
     Connection sqlConn = null;
     PreparedStatement pst = null;
     ResultSet rs = null;
+    String masterString;
 
-//    private Frame mf;
     /**
-     * Creates new form SignUpFrame
+     * Creates new form UpdateFrame
      */
-    public SignUpFrame() {
+    public AddUserFrame() {
         initComponents();
-//        userManagement = new UserManagement();
-//        ioFile = new IOFile();
-//        addWindowListener(new WindowAdapter() {
-//            @Override
-//            public void windowClosing(WindowEvent e) {
-//                dispose();
-//            }
-//        });
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
     }
-//    public SignUpFrame(Frame mf,String title,UserManagement managerUserManagement) {
-////        super(mf,title,true);
-//        initComponents();
-//        
-//        
-//        managerUser = new UserManagement();
-//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -74,20 +58,18 @@ public class SignUpFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtComfirm2 = new javax.swing.JTextField();
-        txtComfirm4 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         txtSignUpUser = new javax.swing.JTextField();
         txtSignUpPassword = new javax.swing.JTextField();
-        btnSignUp = new javax.swing.JButton();
+        btnAdd = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         txtComfirm = new javax.swing.JTextField();
-        btnExit = new javax.swing.JButton();
-        lblNameError = new javax.swing.JLabel();
+        btnBack = new javax.swing.JButton();
+        lblNameError1 = new javax.swing.JLabel();
         lblPasswordError = new javax.swing.JLabel();
         txtFullname = new javax.swing.JTextField();
         txtJob = new javax.swing.JTextField();
@@ -104,26 +86,18 @@ public class SignUpFrame extends javax.swing.JFrame {
         cboAccountType = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
         txtMail = new javax.swing.JTextField();
-
-        txtComfirm2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtComfirm2ActionPerformed(evt);
-            }
-        });
-
-        txtComfirm4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtComfirm4ActionPerformed(evt);
-            }
-        });
+        jLabel12 = new javax.swing.JLabel();
+        txtPhone = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(400, 600));
+        setPreferredSize(new java.awt.Dimension(400, 600));
 
         jPanel1.setBackground(new java.awt.Color(51, 0, 51));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Sign Up");
+        jLabel1.setText("ADDING USER");
 
         jLabel2.setFont(new java.awt.Font("Microsoft JhengHei Light", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -133,14 +107,14 @@ public class SignUpFrame extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Password");
 
-        btnSignUp.setBackground(new java.awt.Color(102, 0, 102));
-        btnSignUp.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnSignUp.setForeground(new java.awt.Color(255, 255, 255));
-        btnSignUp.setText("Sign up");
-        btnSignUp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
-        btnSignUp.addActionListener(new java.awt.event.ActionListener() {
+        btnAdd.setBackground(new java.awt.Color(102, 0, 102));
+        btnAdd.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnAdd.setForeground(new java.awt.Color(255, 255, 255));
+        btnAdd.setText("Add");
+        btnAdd.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSignUpActionPerformed(evt);
+                btnAddActionPerformed(evt);
             }
         });
 
@@ -165,18 +139,18 @@ public class SignUpFrame extends javax.swing.JFrame {
             }
         });
 
-        btnExit.setBackground(new java.awt.Color(102, 0, 102));
-        btnExit.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnExit.setForeground(new java.awt.Color(255, 255, 255));
-        btnExit.setText("Exit");
-        btnExit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
-        btnExit.addActionListener(new java.awt.event.ActionListener() {
+        btnBack.setBackground(new java.awt.Color(102, 0, 102));
+        btnBack.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnBack.setForeground(new java.awt.Color(255, 255, 255));
+        btnBack.setText("Back");
+        btnBack.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExitActionPerformed(evt);
+                btnBackActionPerformed(evt);
             }
         });
 
-        lblNameError.setForeground(new java.awt.Color(255, 0, 0));
+        lblNameError1.setForeground(new java.awt.Color(255, 0, 0));
 
         lblPasswordError.setForeground(new java.awt.Color(255, 0, 51));
 
@@ -257,19 +231,20 @@ public class SignUpFrame extends javax.swing.JFrame {
             }
         });
 
+        jLabel12.setFont(new java.awt.Font("Microsoft JhengHei Light", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Phone");
+
+        txtPhone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPhoneActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(145, 145, 145)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel8)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -297,7 +272,7 @@ public class SignUpFrame extends javax.swing.JFrame {
                                 .addGap(73, 73, 73)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(lblNameError, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(lblNameError1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(txtSignUpUser, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(lblPasswordError, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -310,20 +285,17 @@ public class SignUpFrame extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(11, 11, 11)
-                                        .addComponent(btnSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                         .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(29, 29, 29)))
-                                .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGap(37, 37, 37))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel12))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(cboAccountType, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtIncome, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -332,8 +304,21 @@ public class SignUpFrame extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(txtDOBMonth, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(12, 12, 12)
-                                        .addComponent(txtDOBDay, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                        .addComponent(txtDOBDay, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addGap(49, 49, 49))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel8))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(112, 112, 112)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -345,7 +330,7 @@ public class SignUpFrame extends javax.swing.JFrame {
                     .addComponent(txtSignUpUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblNameError, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblNameError1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -382,14 +367,18 @@ public class SignUpFrame extends javax.swing.JFrame {
                     .addComponent(txtIncome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(13, 13, 13)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(cboAccountType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(51, 51, 51)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnClear, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(20, 20, 20))
         );
 
@@ -397,27 +386,29 @@ public class SignUpFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 379, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignUpActionPerformed
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
         boolean noError = true;
         boolean dif = true;
 
         if (txtSignUpUser.getText().equals("")) {
-            this.lblNameError.setText("Fill in your username, please");
+            this.lblNameError1.setText("Fill in your username, please");
             noError = false;
             dif = false;
         } else {
-            this.lblNameError.setText("");
+            this.lblNameError1.setText("");
             noError = true;
             String name = txtSignUpUser.getText();
             try {
@@ -429,9 +420,9 @@ public class SignUpFrame extends javax.swing.JFrame {
                     boolean n = false;
                     if (info[0].equals(name)) {
                         dif = false;
-                        this.lblNameError.setText("Your username already exists");
+                        this.lblNameError1.setText("Your username already exists");
                     }
-                    
+
                 }
                 sc.close();
             } catch (Exception e) {
@@ -439,74 +430,72 @@ public class SignUpFrame extends javax.swing.JFrame {
             }
         }
         if (noError && dif) {
-            String name = txtSignUpUser.getText();
-            String password1 = txtSignUpPassword.getText();
-            User user = new User(name, password1);
+
             try {
-                File myObj = new File("User.DAT");
-                Scanner myReader = new Scanner(myObj);
-                String allData = "";
-                while (myReader.hasNextLine()) {
-                    String data = myReader.nextLine();
-                    allData += data + "\n";
+                String username1 = txtSignUpUser.getText();
+                String password1 = txtSignUpPassword.getText();
+                String fullname = txtFullname.getText();
+                String job = txtJob.getText();
+                String dob = txtDOBYear.getText() + "-" + txtDOBMonth.getText() + "-" + txtDOBDay.getText();
+                String income = txtIncome.getText();
+                String phone = txtPhone.getText();
+                String mail = txtMail.getText();
+                String type = cboAccountType.getSelectedItem().toString();
+
+                Class.forName("com.mysql.jdbc.Driver");
+                sqlConn = DriverManager.getConnection(dataConn, username, password);
+                pst = sqlConn.prepareStatement("insert into user values (null ,'" + username1 + "','" + fullname + "','" + dob + "','" + job + "','" + income + "','" + phone + "','" + mail + "','" + type + "')");
+
+                pst.executeUpdate();
+
+                pst = sqlConn.prepareStatement("insert into login values ('" + username1 + "','" + password1 + "','" + mail + "')");
+
+                pst.executeUpdate();
+
+                JOptionPane.showMessageDialog(this, "Adding User successfully");
+
+                String name = txtSignUpUser.getText();
+                password1 = txtSignUpPassword.getText();
+                User user = new User(name, password1);
+                try {
+                    File myObj = new File("User.DAT");
+                    Scanner myReader = new Scanner(myObj);
+                    String allData = "";
+                    while (myReader.hasNextLine()) {
+                        String data = myReader.nextLine();
+                        allData += data + "\n";
+                    }
+                    masterString = allData;
+                    myReader.close();
+                } catch (FileNotFoundException a) {
+                    a.printStackTrace();
                 }
-                masterString = allData;
-                myReader.close();
-            } catch (FileNotFoundException a) {
-                a.printStackTrace();
+                masterString += name + ";" + password1 + "\n";
+                try {
+                    FileWriter file = new FileWriter("User.DAT");
+                    file.append(masterString);
+                    file.close();
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+                LoginFrame lf = new LoginFrame();
+                this.dispose();
+                lf.setLocationRelativeTo(null);
+                lf.setVisible(true);
+            } catch (ClassNotFoundException ex) {
+                java.util.logging.Logger.getLogger(SignUpFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                System.err.println(ex);
             }
-            masterString += name + ";" + password1 + "\n";
-            try {
-                FileWriter file = new FileWriter("User.DAT");
-                file.append(masterString);
-                file.close();
-            } catch (IOException e1) {
-                e1.printStackTrace();
-            }
-            
-            try {
-            String username1 = txtSignUpUser.getText();
-            password1 = txtSignUpPassword.getText();
-            String fullname = txtFullname.getText();
-            String job = txtJob.getText();
-            String dob = txtDOBYear.getText() + "-" + txtDOBMonth.getText() + "-" + txtDOBDay.getText();
-            String income = txtIncome.getText();
-            int phone = 0;
-            String mail = txtMail.getText();
-            String type = cboAccountType.getSelectedItem().toString();
-
-            Class.forName("com.mysql.jdbc.Driver");
-            sqlConn = DriverManager.getConnection(dataConn, username, password);
-            pst = sqlConn.prepareStatement("insert into user values ('" + username1 + "','" + fullname + "','" + dob + "','" + job + "','" + income + "','" + phone + "','" + mail + "','" + type + "')");
-
-            pst.executeUpdate();
-
-            pst = sqlConn.prepareStatement("insert into login values ('" + username1 + "','" + password1 + "','" + mail + "')");
-            
-            pst.executeUpdate();
-
-            JOptionPane.showMessageDialog(this, "Signed up successfully");
-            
-            LoginFrame lf = new LoginFrame();
-            this.dispose();
-            lf.setLocationRelativeTo(null);
-            lf.setVisible(true);
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SignUpFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            System.err.println(ex);
         }
-        }
-        
-        
-    }//GEN-LAST:event_btnSignUpActionPerformed
+    }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         // TODO add your handling code here:
         this.txtSignUpUser.setText("");
         this.txtSignUpPassword.setText("");
         this.txtComfirm.setText("");
-        this.lblNameError.setText("");
+        this.lblNameError1.setText("");
         this.lblPasswordError.setText("");
         this.txtFullname.setText("");
         this.txtJob.setText("");
@@ -516,34 +505,25 @@ public class SignUpFrame extends javax.swing.JFrame {
         this.txtIncome.setText("");
     }//GEN-LAST:event_btnClearActionPerformed
 
-    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
-        // TODO add your handling code here:
-        LoginFrame lf = new LoginFrame();
-        this.dispose();
-        lf.setLocationRelativeTo(null);
-        lf.setVisible(true);
-
-    }//GEN-LAST:event_btnExitActionPerformed
-
     private void txtComfirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtComfirmActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtComfirmActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        AdminMainFrame lf = new AdminMainFrame(this, rootPaneCheckingEnabled);
+        this.dispose();
+        lf.setLocationRelativeTo(null);
+        lf.setVisible(true);
+    }//GEN-LAST:event_btnBackActionPerformed
 
     private void txtFullnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFullnameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFullnameActionPerformed
 
-    private void txtComfirm2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtComfirm2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtComfirm2ActionPerformed
-
     private void txtJobActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtJobActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtJobActionPerformed
-
-    private void txtComfirm4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtComfirm4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtComfirm4ActionPerformed
 
     private void txtDOBYearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDOBYearActionPerformed
         // TODO add your handling code here:
@@ -565,6 +545,10 @@ public class SignUpFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMailActionPerformed
 
+    private void txtPhoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPhoneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPhoneActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -582,33 +566,50 @@ public class SignUpFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SignUpFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddUserFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SignUpFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddUserFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SignUpFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddUserFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SignUpFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AddUserFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SignUpFrame().setVisible(true);
+                new AddUserFrame().setVisible(true);
             }
         });
     }
 
+    public boolean isNumber(String str) {
+        try {
+            float p = Float.parseFloat(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAdd;
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnClear;
-    private javax.swing.JButton btnExit;
-    private javax.swing.JButton btnSignUp;
     private javax.swing.JComboBox<String> cboAccountType;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -618,11 +619,9 @@ public class SignUpFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel lblNameError;
+    private javax.swing.JLabel lblNameError1;
     private javax.swing.JLabel lblPasswordError;
     private javax.swing.JTextField txtComfirm;
-    private javax.swing.JTextField txtComfirm2;
-    private javax.swing.JTextField txtComfirm4;
     private javax.swing.JTextField txtDOBDay;
     private javax.swing.JTextField txtDOBMonth;
     private javax.swing.JTextField txtDOBYear;
@@ -630,6 +629,7 @@ public class SignUpFrame extends javax.swing.JFrame {
     private javax.swing.JTextField txtIncome;
     private javax.swing.JTextField txtJob;
     private javax.swing.JTextField txtMail;
+    private javax.swing.JTextField txtPhone;
     private javax.swing.JTextField txtSignUpPassword;
     private javax.swing.JTextField txtSignUpUser;
     // End of variables declaration//GEN-END:variables

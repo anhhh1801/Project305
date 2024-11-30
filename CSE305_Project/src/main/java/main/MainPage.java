@@ -101,7 +101,7 @@ public class MainPage extends javax.swing.JFrame {
 
     private void btnDetailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDetailActionPerformed
         // TODO add your handling code here:
-        UpdateFrame uf = new UpdateFrame(this, rootPaneCheckingEnabled, name);
+        UpdateExpenseFrame uf = new UpdateExpenseFrame(this, rootPaneCheckingEnabled, name);
         uf.setLocationRelativeTo(null);
         uf.setVisible(true);
         this.dispose();

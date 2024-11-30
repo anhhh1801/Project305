@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Vector;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import static main.UpdateFrame.name;
+import static main.UpdateExpenseFrame.name;
 
 /**
  *
@@ -34,7 +34,7 @@ public class UpdateUserDetails extends javax.swing.JFrame {
     static String name;
 
     /**
-     * Creates new form UpdateFrame
+     * Creates new form UpdateExpenseFrame
      */
     public UpdateUserDetails(String name) {
         initComponents();
@@ -357,7 +357,7 @@ public class UpdateUserDetails extends javax.swing.JFrame {
             updateDB();
         }
         catch (ClassNotFoundException ex){
-            java.util.logging.Logger.getLogger(UpdateFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(UpdateExpenseFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }catch (SQLException ex){
             System.err.println(ex);
         }
