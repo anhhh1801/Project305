@@ -89,6 +89,10 @@ public class MainPage extends javax.swing.JFrame {
 
     private void btnManageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageActionPerformed
         // TODO add your handling code here:
+        ManageExpenseFrame mf = new ManageExpenseFrame(this, rootPaneCheckingEnabled, name);
+        mf.setLocationRelativeTo(null);
+        mf.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnManageActionPerformed
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed

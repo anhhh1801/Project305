@@ -64,7 +64,7 @@ public class UpdateUserDetails extends javax.swing.JFrame {
                     txtFullname.setText(rs.getString("fullname"));
                     txtDOB.setText(rs.getString("date_of_birth"));
                     txtJob.setText(rs.getString("job"));
-                    txtIncome.setText(String.valueOf(Double.parseDouble(rs.getString("monthlyIncome"))));
+                    txtIncome.setText(String.valueOf(Long.parseLong(rs.getString("monthlyIncome"))));
                     txtPhone.setText(rs.getString("phone"));
                     txtMail.setText(rs.getString("mail"));
                 }
@@ -234,7 +234,7 @@ public class UpdateUserDetails extends javax.swing.JFrame {
             String fullname = txtFullname.getText();
             String DOB = txtDOB.getText();
             String job = txtJob.getText();
-            double income = Double.parseDouble(txtIncome.getText());
+            long income = Long.parseLong(txtIncome.getText());
             String phone = txtPhone.getText();
             String mail = txtMail.getText();
             

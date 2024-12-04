@@ -194,7 +194,7 @@ public class AddExpenseFrame extends javax.swing.JFrame {
             int month = Integer.parseInt(txtMonth.getText());
             int day = Integer.parseInt(txtDay.getText());
             String type = (String)cboType.getSelectedItem();
-            double amount = Double.parseDouble(txtAmount.getText());
+            long amount = Long.parseLong(txtAmount.getText());
             String description = txtDescription.getText();
             
             Class.forName("com.mysql.jdbc.Driver");

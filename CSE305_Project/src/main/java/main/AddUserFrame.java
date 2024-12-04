@@ -437,7 +437,7 @@ public class AddUserFrame extends javax.swing.JFrame {
                 String fullname = txtFullname.getText();
                 String job = txtJob.getText();
                 String dob = txtDOBYear.getText() + "-" + txtDOBMonth.getText() + "-" + txtDOBDay.getText();
-                String income = txtIncome.getText();
+                long income = Long.parseLong(txtIncome.getText());
                 String phone = txtPhone.getText();
                 String mail = txtMail.getText();
                 String type = cboAccountType.getSelectedItem().toString();
