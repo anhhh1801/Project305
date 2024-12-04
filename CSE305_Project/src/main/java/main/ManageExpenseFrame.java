@@ -35,7 +35,8 @@ public class ManageExpenseFrame extends javax.swing.JFrame {
     Connection sqlConn = null;
     PreparedStatement pst = null;
     ResultSet rs = null;
-    int q, i, id, deleteItem;
+    int q, i;
+    double balance, total;
     static String name = "";
 
     private DefaultTableModel tblModel;
@@ -48,7 +49,6 @@ public class ManageExpenseFrame extends javax.swing.JFrame {
         this.name = name;
         updateDB();
         updateBalance();
-        updateTotal();
         
     }
 
@@ -78,6 +78,8 @@ public class ManageExpenseFrame extends javax.swing.JFrame {
                 }
                 RecordTable.addRow(columnData);
             }
+            
+            
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
@@ -97,24 +99,43 @@ public class ManageExpenseFrame extends javax.swing.JFrame {
             while (rs.next()) {
 
                 for (i = 1; i <= q; i++) {
+                    balance = Double.parseDouble(rs.getString("monthlyIncome"));
                     jBalance.setText(rs.getString("monthlyIncome"));
 
                 }
             }
+            
+            
+            pst = sqlConn.prepareStatement("SELECT sum(amount) from expenses where username = '" + name + "'");
+            rs = pst.executeQuery();
+            stData = rs.getMetaData();
 
+            q = stData.getColumnCount();
+
+            while (rs.next()) {
+
+                for (i = 1; i <= q; i++) {
+                    total = Double.parseDouble(rs.getString("sum(amount)"));
+                    jTotal.setText(rs.getString("sum(amount)"));
+
+                }
+            }
+            
+            
+            if(balance >= total){
+                jStatus.setText("Good");
+            }else{
+                jStatus.setText("Over");
+            }
+            
+            
             
             
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
     }
-    public void updateTotal() {
-        long total = 0;
-            for (int i = 0; i < tblShow.getRowCount(); i++) {
-                total += Long.parseLong(tblShow.getValueAt(i, 2).toString());
-            }
-            jTotal.setText(total + "");
-    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -289,13 +310,13 @@ public class ManageExpenseFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnExit, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                    .addComponent(jBalance, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTotal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel4)
                         .addComponent(jLabel6)
                         .addComponent(jLabel13)
-                        .addComponent(jStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jBalance)
+                        .addComponent(jTotal)))
                 .addContainerGap())
         );
 
