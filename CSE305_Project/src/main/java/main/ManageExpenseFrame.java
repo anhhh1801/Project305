@@ -592,9 +592,9 @@ public class ManageExpenseFrame extends javax.swing.JFrame {
         }
         if (txtLimitation.getText().equalsIgnoreCase("")) {
             txtStatus.setText("");
-        } else if (Long.parseLong(txtTotalSpend.getText()) > Long.parseLong(txtLimitation.getText())) {
+        } else if (Double.parseDouble(txtTotalSpend.getText()) > Double.parseDouble(txtLimitation.getText())) {
             txtStatus.setText("Overspent");
-        } else if (Long.parseLong(txtTotalSpend.getText()) < Long.parseLong(txtLimitation.getText())) {
+        } else if (Double.parseDouble(txtTotalSpend.getText()) < Double.parseDouble(txtLimitation.getText())) {
             txtStatus.setText("Good");
         } else {
             txtStatus.setText("Equal");
@@ -621,7 +621,7 @@ public class ManageExpenseFrame extends javax.swing.JFrame {
         try {
 
             String type = txtType.getText();
-            long totalSpend = Long.parseLong(txtTotalSpend.getText());
+            double totalSpend = Double.parseDouble(txtTotalSpend.getText());
             long limit = Long.parseLong(txtLimitation.getText());
 
             Class.forName("com.mysql.jdbc.Driver");

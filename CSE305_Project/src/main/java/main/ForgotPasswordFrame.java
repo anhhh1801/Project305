@@ -270,11 +270,16 @@ public class ForgotPasswordFrame extends javax.swing.JFrame {
                                     pass = rs.getString("password");
                                 }
                             }
-                            JOptionPane.showMessageDialog(this, "Your password is:" + pass);
-                            LoginFrame lf = new LoginFrame();
-                            lf.setLocationRelativeTo(null);
-                            lf.setVisible(true);
-                            this.dispose();
+                            if (pass == "") {
+                                JOptionPane.showMessageDialog(this, "Email is incorrect!!");
+                            } else {
+                                JOptionPane.showMessageDialog(this, "Your password is:" + pass);
+                                LoginFrame lf = new LoginFrame();
+                                lf.setLocationRelativeTo(null);
+                                lf.setVisible(true);
+                                this.dispose();
+                            }
+
                         } catch (ClassNotFoundException ex) {
                             java.util.logging.Logger.getLogger(ForgotPasswordFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
                         } catch (SQLException ex) {

@@ -441,7 +441,35 @@ public class SignUpFrame extends javax.swing.JFrame {
         if (noError && dif) {
             String name = txtSignUpUser.getText();
             String password1 = txtSignUpPassword.getText();
-            User user = new User(name, password1);
+            
+            
+            try {
+            String username1 = txtSignUpUser.getText();
+            password1 = txtSignUpPassword.getText();
+            String fullname = txtFullname.getText();
+            String job = txtJob.getText();
+            String dob = txtDOBYear.getText() + "-" + txtDOBMonth.getText() + "-" + txtDOBDay.getText();
+            String income = txtIncome.getText();
+            int phone = 0;
+            String mail = txtMail.getText();
+            String type = cboAccountType.getSelectedItem().toString();
+
+            Class.forName("com.mysql.jdbc.Driver");
+            sqlConn = DriverManager.getConnection(dataConn, username, password);
+            pst = sqlConn.prepareStatement("insert into user values (null,'" + username1 + "','" + fullname + "','" + dob + "','" + job + "','" + income + "','" + phone + "','" + mail + "','" + type + "')");
+
+            pst.executeUpdate();
+
+            pst = sqlConn.prepareStatement("insert into login values ('" + username1 + "','" + password1 + "','" + mail + "')");
+            
+            pst.executeUpdate();
+            
+            pst = sqlConn.prepareStatement("insert into limits values ('" + username1 + "','Food',null,null),('" + username1 + "','Coffee',null,null),('" + username1 + "','House Fee',null,null),('" + username1 + "','Shopping',null,null),('" + username1 + "','Education',null,null);");
+            
+            pst.executeUpdate();
+
+            JOptionPane.showMessageDialog(this, "Signed up successfully");
+            
             try {
                 File myObj = new File("User.DAT");
                 Scanner myReader = new Scanner(myObj);
@@ -464,29 +492,6 @@ public class SignUpFrame extends javax.swing.JFrame {
                 e1.printStackTrace();
             }
             
-            try {
-            String username1 = txtSignUpUser.getText();
-            password1 = txtSignUpPassword.getText();
-            String fullname = txtFullname.getText();
-            String job = txtJob.getText();
-            String dob = txtDOBYear.getText() + "-" + txtDOBMonth.getText() + "-" + txtDOBDay.getText();
-            String income = txtIncome.getText();
-            int phone = 0;
-            String mail = txtMail.getText();
-            String type = cboAccountType.getSelectedItem().toString();
-
-            Class.forName("com.mysql.jdbc.Driver");
-            sqlConn = DriverManager.getConnection(dataConn, username, password);
-            pst = sqlConn.prepareStatement("insert into user values ('" + username1 + "','" + fullname + "','" + dob + "','" + job + "','" + income + "','" + phone + "','" + mail + "','" + type + "')");
-
-            pst.executeUpdate();
-
-            pst = sqlConn.prepareStatement("insert into login values ('" + username1 + "','" + password1 + "','" + mail + "')");
-            
-            pst.executeUpdate();
-
-            JOptionPane.showMessageDialog(this, "Signed up successfully");
-            
             LoginFrame lf = new LoginFrame();
             this.dispose();
             lf.setLocationRelativeTo(null);
@@ -496,6 +501,7 @@ public class SignUpFrame extends javax.swing.JFrame {
         } catch (SQLException ex) {
             System.err.println(ex);
         }
+            
         }
         
         
@@ -506,6 +512,7 @@ public class SignUpFrame extends javax.swing.JFrame {
         this.txtSignUpUser.setText("");
         this.txtSignUpPassword.setText("");
         this.txtComfirm.setText("");
+        this.txtMail.setText("");
         this.lblNameError.setText("");
         this.lblPasswordError.setText("");
         this.txtFullname.setText("");
