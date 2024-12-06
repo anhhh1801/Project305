@@ -165,7 +165,6 @@ public class ManageExpenseFrame extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        btnPrint = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -175,12 +174,6 @@ public class ManageExpenseFrame extends javax.swing.JFrame {
         txtLimitation = new javax.swing.JTextField();
         txtTotalSpend = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        lblRamError = new javax.swing.JLabel();
-        lblNameError = new javax.swing.JLabel();
-        lblColorError = new javax.swing.JLabel();
-        lblPriceError = new javax.swing.JLabel();
-        lblPublisherError = new javax.swing.JLabel();
-        lblNoRow = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         txtType = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
@@ -340,17 +333,6 @@ public class ManageExpenseFrame extends javax.swing.JFrame {
 
         jLabel3.setText("jLabel3");
 
-        btnPrint.setBackground(new java.awt.Color(102, 0, 102));
-        btnPrint.setFont(new java.awt.Font("MS Gothic", 1, 18)); // NOI18N
-        btnPrint.setForeground(new java.awt.Color(255, 255, 255));
-        btnPrint.setText("Print");
-        btnPrint.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
-        btnPrint.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPrintActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -360,9 +342,7 @@ public class ManageExpenseFrame extends javax.swing.JFrame {
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnPrint, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -373,11 +353,9 @@ public class ManageExpenseFrame extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap(9, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnPrint, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(11, 11, 11))
             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel4Layout.createSequentialGroup()
@@ -420,24 +398,6 @@ public class ManageExpenseFrame extends javax.swing.JFrame {
 
         jLabel11.setText("$");
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, -1, -1));
-
-        lblRamError.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel2.add(lblRamError, new org.netbeans.lib.awtextra.AbsoluteConstraints(394, 85, 209, 18));
-
-        lblNameError.setForeground(new java.awt.Color(255, 0, 51));
-        jPanel2.add(lblNameError, new org.netbeans.lib.awtextra.AbsoluteConstraints(276, 149, 237, 19));
-
-        lblColorError.setForeground(new java.awt.Color(255, 0, 51));
-        jPanel2.add(lblColorError, new org.netbeans.lib.awtextra.AbsoluteConstraints(461, 208, 142, 14));
-
-        lblPriceError.setForeground(new java.awt.Color(255, 0, 51));
-        jPanel2.add(lblPriceError, new org.netbeans.lib.awtextra.AbsoluteConstraints(515, 248, 13, 17));
-
-        lblPublisherError.setForeground(new java.awt.Color(255, 0, 51));
-        jPanel2.add(lblPublisherError, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 248, 154, 14));
-
-        lblNoRow.setForeground(new java.awt.Color(255, 0, 51));
-        jPanel2.add(lblNoRow, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 286, 160, 20));
 
         jLabel8.setText("STATUS");
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 50, 24));
@@ -601,19 +561,6 @@ public class ManageExpenseFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_tblShowMouseClicked
 
-    private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintActionPerformed
-        // TODO add your handling code here:
-        MessageFormat header = new MessageFormat("Expense Tracker");
-        MessageFormat footer = new MessageFormat("Page {0, number, integer}");
-
-        try {
-            tblShow.print(JTable.PrintMode.NORMAL, header, footer);
-        } catch (java.awt.print.PrinterException e) {
-            System.err.format("No Printer found", e.getMessage());
-        }
-
-    }//GEN-LAST:event_btnPrintActionPerformed
-
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         DefaultTableModel Recordtable = (DefaultTableModel) tblShow.getModel();
         int selectedRows = tblShow.getSelectedRow();
@@ -699,7 +646,6 @@ public class ManageExpenseFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnClear;
     private javax.swing.JButton btnExit;
-    private javax.swing.JButton btnPrint;
     private javax.swing.JButton btnUpdate;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
@@ -727,12 +673,6 @@ public class ManageExpenseFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel jStatus;
     private javax.swing.JLabel jTotal;
-    private javax.swing.JLabel lblColorError;
-    private javax.swing.JLabel lblNameError;
-    private javax.swing.JLabel lblNoRow;
-    private javax.swing.JLabel lblPriceError;
-    private javax.swing.JLabel lblPublisherError;
-    private javax.swing.JLabel lblRamError;
     private javax.swing.JScrollPane spShow;
     private javax.swing.JTable tblShow;
     private javax.swing.JTextField txtLimitation;
