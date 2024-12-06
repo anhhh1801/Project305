@@ -30,32 +30,19 @@ public class AdminPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        btnLogout = new javax.swing.JButton();
-        jLabelWel = new javax.swing.JLabel();
         btnUserManagement = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabelWel = new javax.swing.JLabel();
+        btnLogout = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("HomePage");
-        setMinimumSize(new java.awt.Dimension(500, 250));
+        setBackground(new java.awt.Color(51, 0, 51));
+        setMinimumSize(new java.awt.Dimension(391, 250));
         setResizable(false);
         setSize(new java.awt.Dimension(500, 500));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel2.setText("EXPENSE TRACKER");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, 230, 40));
-
-        btnLogout.setText("Logout");
-        btnLogout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLogoutActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
-
-        jLabelWel.setText("Welcome Admin");
-        getContentPane().add(jLabelWel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 190, 30));
 
         btnUserManagement.setText("User Management ");
         btnUserManagement.addActionListener(new java.awt.event.ActionListener() {
@@ -63,7 +50,30 @@ public class AdminPage extends javax.swing.JFrame {
                 btnUserManagementActionPerformed(evt);
             }
         });
-        getContentPane().add(btnUserManagement, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
+        getContentPane().add(btnUserManagement, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 310, 40));
+
+        jPanel1.setBackground(new java.awt.Color(51, 0, 51));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("EXPENSE TRACKER");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 230, 40));
+
+        jLabelWel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabelWel.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelWel.setText("Welcome Admin");
+        jPanel1.add(jLabelWel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 190, 30));
+
+        btnLogout.setText("Logout");
+        btnLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogoutActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 310, 40));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 240));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -127,5 +137,6 @@ public class AdminPage extends javax.swing.JFrame {
     private javax.swing.JButton btnUserManagement;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelWel;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

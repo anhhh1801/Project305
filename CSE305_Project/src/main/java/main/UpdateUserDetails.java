@@ -85,6 +85,7 @@ public class UpdateUserDetails extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -93,20 +94,15 @@ public class UpdateUserDetails extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         txtFullname = new javax.swing.JTextField();
         btnUpdate = new javax.swing.JButton();
-        btnExit = new javax.swing.JButton();
-        lblNameError = new javax.swing.JLabel();
-        lblColorError = new javax.swing.JLabel();
-        lblPublisherError = new javax.swing.JLabel();
-        lblPriceError = new javax.swing.JLabel();
-        lblTypeError = new javax.swing.JLabel();
         txtDOB = new javax.swing.JTextField();
+        btnExit = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txtIncome = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
         txtPhone = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         txtMail = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -123,34 +119,40 @@ public class UpdateUserDetails extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(446, 340));
-        setPreferredSize(new java.awt.Dimension(500, 303));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(51, 0, 51));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("User Details");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(164, 12, -1, 24));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, 24));
 
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Job");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(237, 138, -1, 22));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(237, 138, -1, 22));
 
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Username");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 57, 61, -1));
-        getContentPane().add(txtJob, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 138, 132, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 57, 61, -1));
+        jPanel1.add(txtJob, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 138, 132, -1));
 
         txtUsername.setEditable(false);
         txtUsername.setBackground(new java.awt.Color(153, 153, 153));
-        getContentPane().add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 54, 118, -1));
+        jPanel1.add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 54, 118, -1));
 
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Fullname");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 101, 50, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 101, 50, -1));
 
         txtFullname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFullnameActionPerformed(evt);
             }
         });
-        getContentPane().add(txtFullname, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 98, 142, -1));
+        jPanel1.add(txtFullname, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 98, 142, -1));
 
         btnUpdate.setText("Update");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -158,7 +160,14 @@ public class UpdateUserDetails extends javax.swing.JFrame {
                 btnUpdateActionPerformed(evt);
             }
         });
-        getContentPane().add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 225, 106, 33));
+        jPanel1.add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 225, 106, 33));
+
+        txtDOB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDOBActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtDOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 98, 132, -1));
 
         btnExit.setText("Exit");
         btnExit.addActionListener(new java.awt.event.ActionListener() {
@@ -166,56 +175,40 @@ public class UpdateUserDetails extends javax.swing.JFrame {
                 btnExitActionPerformed(evt);
             }
         });
-        getContentPane().add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 225, 93, 33));
+        jPanel1.add(btnExit, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 225, 93, 33));
 
-        lblNameError.setForeground(new java.awt.Color(255, 0, 0));
-        getContentPane().add(lblNameError, new org.netbeans.lib.awtextra.AbsoluteConstraints(362, 139, 267, -1));
-
-        lblColorError.setForeground(new java.awt.Color(255, 0, 0));
-        getContentPane().add(lblColorError, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 259, 159, -1));
-
-        lblPublisherError.setForeground(new java.awt.Color(255, 0, 0));
-        getContentPane().add(lblPublisherError, new org.netbeans.lib.awtextra.AbsoluteConstraints(467, 303, 162, -1));
-
-        lblPriceError.setForeground(new java.awt.Color(255, 0, 0));
-        getContentPane().add(lblPriceError, new org.netbeans.lib.awtextra.AbsoluteConstraints(464, 303, 159, -1));
-
-        lblTypeError.setForeground(new java.awt.Color(255, 0, 0));
-        getContentPane().add(lblTypeError, new org.netbeans.lib.awtextra.AbsoluteConstraints(299, 259, 159, -1));
-
-        txtDOB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtDOBActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txtDOB, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 98, 132, -1));
-
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("DOB");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(237, 101, 50, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(237, 101, 50, -1));
 
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Income");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(237, 178, -1, 22));
-        getContentPane().add(txtIncome, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 178, 132, -1));
-
-        jLabel10.setText("Phone");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 141, 50, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(237, 178, -1, 22));
+        jPanel1.add(txtIncome, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 178, 132, -1));
 
         txtPhone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPhoneActionPerformed(evt);
             }
         });
-        getContentPane().add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 138, 142, -1));
+        jPanel1.add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 138, 142, -1));
 
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Mail");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 181, 50, -1));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 181, 50, -1));
 
         txtMail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtMailActionPerformed(evt);
             }
         });
-        getContentPane().add(txtMail, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 178, 142, -1));
+        jPanel1.add(txtMail, new org.netbeans.lib.awtextra.AbsoluteConstraints(77, 178, 142, -1));
+
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Phone");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 141, 50, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -336,13 +329,9 @@ public class UpdateUserDetails extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JLabel lblColorError;
-    private javax.swing.JLabel lblNameError;
-    private javax.swing.JLabel lblPriceError;
-    private javax.swing.JLabel lblPublisherError;
-    private javax.swing.JLabel lblTypeError;
     private javax.swing.JTextField txtDOB;
     private javax.swing.JTextField txtFullname;
     private javax.swing.JTextField txtIncome;
