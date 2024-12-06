@@ -30,61 +30,62 @@ public class AdminPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnUserManagement = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabelWel = new javax.swing.JLabel();
         btnLogout = new javax.swing.JButton();
+        btnUserManagement = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("HomePage");
         setBackground(new java.awt.Color(51, 0, 51));
-        setMinimumSize(new java.awt.Dimension(391, 250));
+        setMinimumSize(new java.awt.Dimension(500, 350));
         setResizable(false);
         setSize(new java.awt.Dimension(500, 500));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnUserManagement.setText("User Management ");
-        btnUserManagement.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnUserManagementActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnUserManagement, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 310, 40));
-
         jPanel1.setBackground(new java.awt.Color(51, 0, 51));
+        jPanel1.setMaximumSize(new java.awt.Dimension(500, 350));
+        jPanel1.setMinimumSize(new java.awt.Dimension(500, 350));
+        jPanel1.setPreferredSize(new java.awt.Dimension(500, 350));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("EXPENSE TRACKER");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 230, 40));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, 230, 40));
 
         jLabelWel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabelWel.setForeground(new java.awt.Color(255, 255, 255));
         jLabelWel.setText("Welcome Admin");
-        jPanel1.add(jLabelWel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 190, 30));
+        jPanel1.add(jLabelWel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 190, 30));
 
+        btnLogout.setBackground(new java.awt.Color(102, 0, 102));
+        btnLogout.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnLogout.setForeground(new java.awt.Color(255, 255, 255));
         btnLogout.setText("Logout");
         btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLogoutActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 310, 40));
+        jPanel1.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 310, 40));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 240));
+        btnUserManagement.setBackground(new java.awt.Color(102, 0, 102));
+        btnUserManagement.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnUserManagement.setForeground(new java.awt.Color(255, 255, 255));
+        btnUserManagement.setText("User Management ");
+        btnUserManagement.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUserManagementActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnUserManagement, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 310, 40));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 350));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
-        // TODO add your handling code here:
-        LoginFrame lg = new LoginFrame();
-        lg.setLocationRelativeTo(null);
-        lg.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_btnLogoutActionPerformed
 
     private void btnUserManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUserManagementActionPerformed
         // TODO add your handling code here:
@@ -93,6 +94,14 @@ public class AdminPage extends javax.swing.JFrame {
         amf.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnUserManagementActionPerformed
+
+    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
+        // TODO add your handling code here:
+        LoginFrame lg = new LoginFrame();
+        lg.setLocationRelativeTo(null);
+        lg.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnLogoutActionPerformed
 
     /**
      * @param args the command line arguments

@@ -31,10 +31,10 @@ public class MainPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnAccountDetail = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabelWel = new javax.swing.JLabel();
+        btnAccountDetail = new javax.swing.JButton();
         btnDetail = new javax.swing.JButton();
         btnManage = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
@@ -42,18 +42,9 @@ public class MainPage extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("HomePage");
         setMinimumSize(new java.awt.Dimension(327, 340));
-        setPreferredSize(new java.awt.Dimension(327, 309));
         setResizable(false);
-        setSize(new java.awt.Dimension(500, 500));
+        setSize(new java.awt.Dimension(500, 350));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        btnAccountDetail.setText("Account Details");
-        btnAccountDetail.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAccountDetailActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnAccountDetail, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 250, 30));
 
         jPanel1.setBackground(new java.awt.Color(51, 0, 51));
         jPanel1.setPreferredSize(new java.awt.Dimension(327, 309));
@@ -62,38 +53,59 @@ public class MainPage extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("EXPENSE TRACKER");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 230, 40));
+        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, 220, 40));
 
         jLabelWel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabelWel.setForeground(new java.awt.Color(255, 255, 255));
         jLabelWel.setText("Welcome");
-        jPanel1.add(jLabelWel, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 190, 30));
+        jPanel1.add(jLabelWel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 190, 30));
 
+        btnAccountDetail.setBackground(new java.awt.Color(102, 0, 102));
+        btnAccountDetail.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnAccountDetail.setForeground(new java.awt.Color(255, 255, 255));
+        btnAccountDetail.setText("Account Details");
+        btnAccountDetail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAccountDetailActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAccountDetail, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 250, 30));
+
+        btnDetail.setBackground(new java.awt.Color(102, 0, 102));
+        btnDetail.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnDetail.setForeground(new java.awt.Color(255, 255, 255));
         btnDetail.setText("Expense Details");
         btnDetail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDetailActionPerformed(evt);
             }
         });
-        jPanel1.add(btnDetail, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 250, 30));
+        jPanel1.add(btnDetail, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, 250, 30));
 
+        btnManage.setBackground(new java.awt.Color(102, 0, 102));
+        btnManage.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnManage.setForeground(new java.awt.Color(255, 255, 255));
         btnManage.setText("Manage Expense");
         btnManage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageActionPerformed(evt);
             }
         });
-        jPanel1.add(btnManage, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 250, 30));
+        jPanel1.add(btnManage, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 250, 30));
 
+        btnLogout.setBackground(new java.awt.Color(102, 0, 102));
+        btnLogout.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnLogout.setForeground(new java.awt.Color(255, 255, 255));
         btnLogout.setText("Logout");
         btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLogoutActionPerformed(evt);
             }
         });
-        jPanel1.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 100, 40));
+        jPanel1.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 290, 100, 40));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 310));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 350));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

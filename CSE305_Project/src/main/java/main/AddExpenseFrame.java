@@ -60,7 +60,7 @@ public class AddExpenseFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         btnAdd = new javax.swing.JButton();
         btnClear = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
@@ -74,16 +74,19 @@ public class AddExpenseFrame extends javax.swing.JFrame {
         cboType = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
         txtDescription = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(102, 0, 102));
-        setMinimumSize(new java.awt.Dimension(370, 360));
+        setBackground(new java.awt.Color(51, 0, 51));
+        setMinimumSize(new java.awt.Dimension(500, 350));
+        setResizable(false);
+        setSize(new java.awt.Dimension(500, 500));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("ADDING EXPENSE");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, -1, -1));
+        jPanel1.setBackground(new java.awt.Color(51, 0, 51));
+        jPanel1.setMinimumSize(new java.awt.Dimension(500, 350));
+        jPanel1.setPreferredSize(new java.awt.Dimension(500, 350));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnAdd.setBackground(new java.awt.Color(102, 0, 102));
         btnAdd.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -95,7 +98,7 @@ public class AddExpenseFrame extends javax.swing.JFrame {
                 btnAddActionPerformed(evt);
             }
         });
-        getContentPane().add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 90, 40));
+        jPanel1.add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, 90, 40));
 
         btnClear.setBackground(new java.awt.Color(102, 0, 102));
         btnClear.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -107,7 +110,7 @@ public class AddExpenseFrame extends javax.swing.JFrame {
                 btnClearActionPerformed(evt);
             }
         });
-        getContentPane().add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 90, 40));
+        jPanel1.add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 290, 90, 40));
 
         btnBack.setBackground(new java.awt.Color(102, 0, 102));
         btnBack.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -119,7 +122,7 @@ public class AddExpenseFrame extends javax.swing.JFrame {
                 btnBackActionPerformed(evt);
             }
         });
-        getContentPane().add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 230, 90, 40));
+        jPanel1.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, 90, 40));
 
         txtYear.setText("YYYY");
         txtYear.setToolTipText("aa");
@@ -129,22 +132,24 @@ public class AddExpenseFrame extends javax.swing.JFrame {
                 txtYearActionPerformed(evt);
             }
         });
-        getContentPane().add(txtYear, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, -1, -1));
+        jPanel1.add(txtYear, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, -1, -1));
 
         txtAmount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAmountActionPerformed(evt);
             }
         });
-        getContentPane().add(txtAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 170, -1));
+        jPanel1.add(txtAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 170, -1));
 
         jLabel7.setFont(new java.awt.Font("Microsoft JhengHei Light", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Date ");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Microsoft JhengHei Light", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Amount");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, -1, -1));
 
         txtMonth.setText("MM");
         txtMonth.addActionListener(new java.awt.event.ActionListener() {
@@ -152,7 +157,7 @@ public class AddExpenseFrame extends javax.swing.JFrame {
                 txtMonthActionPerformed(evt);
             }
         });
-        getContentPane().add(txtMonth, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 60, 60, -1));
+        jPanel1.add(txtMonth, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 60, -1));
 
         txtDay.setText("DD");
         txtDay.addActionListener(new java.awt.event.ActionListener() {
@@ -160,32 +165,75 @@ public class AddExpenseFrame extends javax.swing.JFrame {
                 txtDayActionPerformed(evt);
             }
         });
-        getContentPane().add(txtDay, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 60, -1));
+        jPanel1.add(txtDay, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 60, -1));
 
         jLabel10.setFont(new java.awt.Font("Microsoft JhengHei Light", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Type");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, -1, -1));
 
         cboType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "None", "Food", "Shopping", "Education", "House Fee", "Coffee" }));
-        getContentPane().add(cboType, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, -1, -1));
+        jPanel1.add(cboType, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Microsoft JhengHei Light", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Description");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, -1));
 
         txtDescription.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDescriptionActionPerformed(evt);
             }
         });
-        getContentPane().add(txtDescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 250, 40));
+        jPanel1.add(txtDescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 250, 40));
 
-        jLabel2.setBackground(new java.awt.Color(102, 0, 102));
-        jLabel2.setForeground(new java.awt.Color(102, 0, 102));
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 280));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("ADDING EXPENSE");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 350));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtDescriptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescriptionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDescriptionActionPerformed
+
+    private void txtDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDayActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDayActionPerformed
+
+    private void txtMonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMonthActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMonthActionPerformed
+
+    private void txtAmountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAmountActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAmountActionPerformed
+
+    private void txtYearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtYearActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtYearActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        UpdateExpenseFrame lf = new UpdateExpenseFrame(this, rootPaneCheckingEnabled, name);
+        this.dispose();
+        lf.setLocationRelativeTo(null);
+        lf.setVisible(true);
+    }//GEN-LAST:event_btnBackActionPerformed
+
+    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
+        // TODO add your handling code here:
+        this.txtAmount.setText("");
+        this.txtDescription.setText("");
+        this.txtDay.setText("DD");
+        this.txtMonth.setText("MM");
+        this.txtYear.setText("YYYY");
+        this.cboType.setSelectedItem("None");
+    }//GEN-LAST:event_btnClearActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
@@ -196,11 +244,11 @@ public class AddExpenseFrame extends javax.swing.JFrame {
             String type = (String)cboType.getSelectedItem();
             long amount = Long.parseLong(txtAmount.getText());
             String description = txtDescription.getText();
-            
+
             Class.forName("com.mysql.jdbc.Driver");
             sqlConn = DriverManager.getConnection(dataConn, username, password);
             pst = sqlConn.prepareStatement("insert into expenses values (null,'" + name +  "','" + year +  "','" + month +"','" + day +"','" + type +"','" + amount +"','" + description +"')");
-            
+
             pst.executeUpdate();
             JOptionPane.showMessageDialog(this, "Added");
             UpdateExpenseFrame udf = new UpdateExpenseFrame(this, rootPaneCheckingEnabled, name);
@@ -213,47 +261,8 @@ public class AddExpenseFrame extends javax.swing.JFrame {
         }catch (SQLException ex){
             System.err.println(ex);
         }
-                                       
 
     }//GEN-LAST:event_btnAddActionPerformed
-
-    private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
-        // TODO add your handling code here:
-        this.txtAmount.setText("");
-        this.txtDescription.setText("");
-        this.txtDay.setText("DD");
-        this.txtMonth.setText("MM");
-        this.txtYear.setText("YYYY");
-        this.cboType.setSelectedItem("None");
-    }//GEN-LAST:event_btnClearActionPerformed
-
-    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        // TODO add your handling code here:
-        UpdateExpenseFrame lf = new UpdateExpenseFrame(this, rootPaneCheckingEnabled, name);
-        this.dispose();
-        lf.setLocationRelativeTo(null);
-        lf.setVisible(true);
-    }//GEN-LAST:event_btnBackActionPerformed
-
-    private void txtYearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtYearActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtYearActionPerformed
-
-    private void txtAmountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAmountActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtAmountActionPerformed
-
-    private void txtMonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMonthActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMonthActionPerformed
-
-    private void txtDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDayActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDayActionPerformed
-
-    private void txtDescriptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescriptionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtDescriptionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -315,9 +324,9 @@ public class AddExpenseFrame extends javax.swing.JFrame {
     javax.swing.JLabel jLabel1;
     javax.swing.JLabel jLabel10;
     javax.swing.JLabel jLabel12;
-    javax.swing.JLabel jLabel2;
     javax.swing.JLabel jLabel7;
     javax.swing.JLabel jLabel8;
+    javax.swing.JPanel jPanel1;
     javax.swing.JTextField txtAmount;
     javax.swing.JTextField txtDay;
     javax.swing.JTextField txtDescription;

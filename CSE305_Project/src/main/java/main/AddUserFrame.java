@@ -91,6 +91,7 @@ public class AddUserFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(400, 600));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(51, 0, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -98,19 +99,19 @@ public class AddUserFrame extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("ADDING USER");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(112, 6, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Microsoft JhengHei Light", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Username");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Microsoft JhengHei Light", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Password");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 94, -1, -1));
-        jPanel1.add(txtSignUpUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 50, 200, -1));
-        jPanel1.add(txtSignUpPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 94, 200, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
+        jPanel1.add(txtSignUpUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 200, -1));
+        jPanel1.add(txtSignUpPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 200, -1));
 
         btnAdd.setBackground(new java.awt.Color(102, 0, 102));
         btnAdd.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -122,7 +123,7 @@ public class AddUserFrame extends javax.swing.JFrame {
                 btnAddActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 478, 90, 38));
+        jPanel1.add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 90, 38));
 
         btnClear.setBackground(new java.awt.Color(102, 0, 102));
         btnClear.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -134,19 +135,19 @@ public class AddUserFrame extends javax.swing.JFrame {
                 btnClearActionPerformed(evt);
             }
         });
-        jPanel1.add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 478, 90, 38));
+        jPanel1.add(btnClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 490, 90, 38));
 
         jLabel4.setFont(new java.awt.Font("Microsoft JhengHei Light", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Comfirm Password");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 141, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
 
         txtComfirm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtComfirmActionPerformed(evt);
             }
         });
-        jPanel1.add(txtComfirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 141, 200, -1));
+        jPanel1.add(txtComfirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 200, -1));
 
         btnBack.setBackground(new java.awt.Color(102, 0, 102));
         btnBack.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -158,27 +159,27 @@ public class AddUserFrame extends javax.swing.JFrame {
                 btnBackActionPerformed(evt);
             }
         });
-        jPanel1.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(263, 478, 90, 38));
+        jPanel1.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 490, 90, 38));
 
         lblNameError1.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel1.add(lblNameError1, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 78, 200, 10));
+        jPanel1.add(lblNameError1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, 200, 10));
 
         lblPasswordError.setForeground(new java.awt.Color(255, 0, 51));
-        jPanel1.add(lblPasswordError, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 122, 200, 11));
+        jPanel1.add(lblPasswordError, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 200, 11));
 
         txtFullname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFullnameActionPerformed(evt);
             }
         });
-        jPanel1.add(txtFullname, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 243, 200, -1));
+        jPanel1.add(txtFullname, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 200, -1));
 
         txtJob.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtJobActionPerformed(evt);
             }
         });
-        jPanel1.add(txtJob, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 283, 200, -1));
+        jPanel1.add(txtJob, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 200, -1));
 
         txtDOBYear.setText("YYYY");
         txtDOBYear.setToolTipText("aa");
@@ -188,34 +189,34 @@ public class AddUserFrame extends javax.swing.JFrame {
                 txtDOBYearActionPerformed(evt);
             }
         });
-        jPanel1.add(txtDOBYear, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 323, -1, -1));
+        jPanel1.add(txtDOBYear, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, -1, -1));
 
         txtIncome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIncomeActionPerformed(evt);
             }
         });
-        jPanel1.add(txtIncome, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 363, 200, -1));
+        jPanel1.add(txtIncome, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, 200, -1));
 
         jLabel5.setFont(new java.awt.Font("Microsoft JhengHei Light", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Fullname");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 245, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Microsoft JhengHei Light", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Job");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 285, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Microsoft JhengHei Light", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Date of birth");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 323, 110, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 110, -1));
 
         jLabel8.setFont(new java.awt.Font("Microsoft JhengHei Light", 1, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Monthly Income");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 363, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, -1, -1));
 
         txtDOBMonth.setText("MM");
         txtDOBMonth.addActionListener(new java.awt.event.ActionListener() {
@@ -223,7 +224,7 @@ public class AddUserFrame extends javax.swing.JFrame {
                 txtDOBMonthActionPerformed(evt);
             }
         });
-        jPanel1.add(txtDOBMonth, new org.netbeans.lib.awtextra.AbsoluteConstraints(229, 323, 58, -1));
+        jPanel1.add(txtDOBMonth, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 340, 58, -1));
 
         txtDOBDay.setText("DD");
         txtDOBDay.addActionListener(new java.awt.event.ActionListener() {
@@ -231,56 +232,54 @@ public class AddUserFrame extends javax.swing.JFrame {
                 txtDOBDayActionPerformed(evt);
             }
         });
-        jPanel1.add(txtDOBDay, new org.netbeans.lib.awtextra.AbsoluteConstraints(299, 323, 54, -1));
+        jPanel1.add(txtDOBDay, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 340, 54, -1));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("(Non-required)");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 221, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Microsoft JhengHei Light", 1, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Account Type");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 438, 110, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 110, -1));
 
         cboAccountType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Free", "Premium" }));
-        jPanel1.add(cboAccountType, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 438, 125, -1));
+        jPanel1.add(cboAccountType, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 450, 125, -1));
 
         jLabel11.setFont(new java.awt.Font("Microsoft JhengHei Light", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Mail");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 181, -1, -1));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
 
         txtMail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtMailActionPerformed(evt);
             }
         });
-        jPanel1.add(txtMail, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 181, 200, -1));
+        jPanel1.add(txtMail, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 200, -1));
 
         jLabel12.setFont(new java.awt.Font("Microsoft JhengHei Light", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Phone");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 403, -1, -1));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, -1, -1));
 
         txtPhone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPhoneActionPerformed(evt);
             }
         });
-        jPanel1.add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(153, 403, 200, -1));
+        jPanel1.add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 420, 200, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 379, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE)
         );
 
         pack();
