@@ -105,7 +105,6 @@ public class UpdateExpenseFrame extends javax.swing.JFrame {
         txtSearch = new javax.swing.JTextField();
         btnRemove = new javax.swing.JButton();
         btnRestore1 = new javax.swing.JButton();
-        lblBuyError = new javax.swing.JLabel();
         btnExit = new javax.swing.JButton();
         btnPrint = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
@@ -211,10 +210,6 @@ public class UpdateExpenseFrame extends javax.swing.JFrame {
             }
         });
         jPanel1.add(btnRestore1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 50, 115, 43));
-
-        lblBuyError.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblBuyError.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel1.add(lblBuyError, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 55, 281, 43));
 
         btnExit.setBackground(new java.awt.Color(102, 0, 102));
         btnExit.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -597,7 +592,6 @@ public class UpdateExpenseFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lblBuyError;
     private javax.swing.JScrollPane spShow;
     private javax.swing.JTable tblShow;
     private javax.swing.JTextField txtAmount;

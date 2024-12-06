@@ -61,9 +61,10 @@ public class AdminPage extends javax.swing.JFrame {
         jPanel1.add(jLabelWel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 190, 30));
 
         btnLogout.setBackground(new java.awt.Color(102, 0, 102));
-        btnLogout.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnLogout.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         btnLogout.setForeground(new java.awt.Color(255, 255, 255));
         btnLogout.setText("Logout");
+        btnLogout.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
         btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLogoutActionPerformed(evt);
@@ -72,9 +73,10 @@ public class AdminPage extends javax.swing.JFrame {
         jPanel1.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 310, 40));
 
         btnUserManagement.setBackground(new java.awt.Color(102, 0, 102));
-        btnUserManagement.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnUserManagement.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         btnUserManagement.setForeground(new java.awt.Color(255, 255, 255));
         btnUserManagement.setText("User Management ");
+        btnUserManagement.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
         btnUserManagement.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUserManagementActionPerformed(evt);

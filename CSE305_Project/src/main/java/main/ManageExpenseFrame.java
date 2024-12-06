@@ -317,7 +317,7 @@ public class ManageExpenseFrame extends javax.swing.JFrame {
                 btnUpdateActionPerformed(evt);
             }
         });
-        jPanel2.add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, 120, 40));
+        jPanel2.add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 360, 120, 40));
 
         btnClear.setBackground(new java.awt.Color(102, 0, 102));
         btnClear.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
