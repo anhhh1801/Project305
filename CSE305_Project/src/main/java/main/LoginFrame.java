@@ -124,13 +124,13 @@ public class LoginFrame extends javax.swing.JFrame {
         jPanel1.add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 80, 35));
 
         lblUsernameError.setForeground(new java.awt.Color(255, 0, 51));
-        jPanel1.add(lblUsernameError, new org.netbeans.lib.awtextra.AbsoluteConstraints(82, 87, 180, 14));
+        jPanel1.add(lblUsernameError, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 180, 14));
 
         lblPasswordError.setForeground(new java.awt.Color(255, 0, 51));
-        jPanel1.add(lblPasswordError, new org.netbeans.lib.awtextra.AbsoluteConstraints(82, 148, 183, 13));
+        jPanel1.add(lblPasswordError, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 183, 13));
 
         lblLoginError.setForeground(new java.awt.Color(255, 0, 51));
-        jPanel1.add(lblLoginError, new org.netbeans.lib.awtextra.AbsoluteConstraints(82, 165, 183, 16));
+        jPanel1.add(lblLoginError, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 183, 16));
 
         btnForgotPass.setBackground(new java.awt.Color(102, 0, 102));
         btnForgotPass.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
