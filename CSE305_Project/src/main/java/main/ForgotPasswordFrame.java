@@ -122,13 +122,13 @@ public class ForgotPasswordFrame extends javax.swing.JFrame {
         jPanel1.add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(301, 240, 77, 35));
 
         lblUsernameError.setForeground(new java.awt.Color(255, 0, 51));
-        jPanel1.add(lblUsernameError, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 14));
+        jPanel1.add(lblUsernameError, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 180, 14));
 
         lblMailError.setForeground(new java.awt.Color(255, 0, 51));
-        jPanel1.add(lblMailError, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 14, 183, 13));
+        jPanel1.add(lblMailError, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 183, 13));
 
         lblLoginError.setForeground(new java.awt.Color(255, 0, 51));
-        jPanel1.add(lblLoginError, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 27, 183, 16));
+        jPanel1.add(lblLoginError, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 183, 16));
 
         btnForgotPass.setBackground(new java.awt.Color(102, 0, 102));
         btnForgotPass.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
